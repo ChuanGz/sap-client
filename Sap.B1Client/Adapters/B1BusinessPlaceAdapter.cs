@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 using RestSharp;
-using Sap.B1Client.B1BusinessPlace;
+using Sap.B1Client.Services;
 using Sap.B1Client.System.Interfaces;
 using Sap.B1Client.System.Models;
 
