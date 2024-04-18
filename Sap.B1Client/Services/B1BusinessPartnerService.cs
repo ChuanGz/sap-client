@@ -10,7 +10,6 @@ public class B1BusinessPartnerService(IOptions<ConfigOptionModel> options) : B1C
 {
     public RestResponse AddNewBusinessPartner(object entity)
     {
-        // _request = new RestRequest(Constant.B1S_Path_BusinessPartner, Method.Post);
         _request.Resource = Constant.B1S_Path_BusinessPartner;
         _request.Method = Method.Post;
         _request.AddHeader(Constant.B1S_Label_Cookie, _hCookieString);
@@ -22,7 +21,6 @@ public class B1BusinessPartnerService(IOptions<ConfigOptionModel> options) : B1C
 
     public RestResponse RetrieveAllBusinessPartner(string requiredTemplate)
     {
-        // _request = new RestRequest(Constant.B1S_Path_BusinessPartner + requiredTemplate, Method.Get);
         _request.Resource = Constant.B1S_Path_BusinessPartner + requiredTemplate;
         _request.Method = Method.Get;
         _request.AddHeader(Constant.B1S_Label_Cookie, _hCookieString);
@@ -33,7 +31,6 @@ public class B1BusinessPartnerService(IOptions<ConfigOptionModel> options) : B1C
 
     public RestResponse RetrieveBusinessPartner(string identity)
     {
-        // _request = new RestRequest(string.Format(Constant.B1S_Path_BusinessPartner + Constant.B1S_SID, identity), Method.Get);
         _request.Resource = string.Format(Constant.B1S_Path_BusinessPartner + Constant.B1S_SID, identity);
         _request.Method = Method.Get;
         _request.AddHeader(Constant.B1S_Label_Cookie, _hCookieString);
@@ -44,7 +41,6 @@ public class B1BusinessPartnerService(IOptions<ConfigOptionModel> options) : B1C
 
     public RestResponse AlterBusinessPartner(string identity, object contentObjt)
     {
-        // _request = new RestRequest(string.Format(Constant.B1S_Path_BusinessPartner + Constant.B1S_SID, identity), Method.Patch);
         _request.Resource = string.Format(Constant.B1S_Path_BusinessPartner + Constant.B1S_SID, identity);
         _request.Method = Method.Patch;
         _request.AddHeader(Constant.B1S_Label_Cookie, _hCookieString);

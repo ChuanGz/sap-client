@@ -10,7 +10,6 @@ public class B1WarehouseService(IOptions<ConfigOptionModel> options) : B1ClientB
 {
     public RestResponse AddNewWarehouse(object entity)
     {
-        // _request = new RestRequest(Constant.B1S_Path_Warehouse, Method.Post);
         _request.Resource = Constant.B1S_Path_Warehouse;
         _request.Method = Method.Post;
         _request.AddHeader(Constant.B1S_Label_Cookie, _hCookieString);
@@ -22,7 +21,6 @@ public class B1WarehouseService(IOptions<ConfigOptionModel> options) : B1ClientB
 
     public RestResponse RetrieveAllWarehouse(string requiredTemplate)
     {
-        // _request = new RestRequest(Constant.B1S_Path_Warehouse + requiredTemplate, Method.Get);
         _request.Resource = Constant.B1S_Path_Warehouse + requiredTemplate;
         _request.Method = Method.Get;
         _request.AddHeader(Constant.B1S_Label_Cookie, _hCookieString);
@@ -34,7 +32,6 @@ public class B1WarehouseService(IOptions<ConfigOptionModel> options) : B1ClientB
 
     public RestResponse RetrieveWarehouse(string identity)
     {
-        // _request = new RestRequest(string.Format(Constant.B1S_Path_Warehouse + Constant.B1S_SID, identity), Method.Get);
         _request.Resource = string.Format(Constant.B1S_Path_Warehouse + Constant.B1S_SID, identity);
         _request.Method = Method.Get;
         _request.AddHeader(Constant.B1S_Label_Cookie, _hCookieString);
@@ -45,7 +42,6 @@ public class B1WarehouseService(IOptions<ConfigOptionModel> options) : B1ClientB
 
     public RestResponse AlterWarehouse(string identity, object contentObjt)
     {
-        // _request = new RestRequest(string.Format(Constant.B1S_Path_Warehouse + Constant.B1S_SID, identity), Method.Patch);
         _request.Resource = string.Format(Constant.B1S_Path_Warehouse + Constant.B1S_SID, identity);
         _request.Method = Method.Patch;
         _request.AddHeader(Constant.B1S_Label_Cookie, _hCookieString);
