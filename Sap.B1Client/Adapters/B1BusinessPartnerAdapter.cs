@@ -6,12 +6,8 @@ using Sap.B1Client.System.Models;
 
 namespace Sap.B1Client.Adapters;
 
-public class B1BusinessPartnerAdapter : B1BusinessPartnerService, IB1Client
+public class B1BusinessPartnerAdapter(IOptions<ConfigOptionModel> options) : B1BusinessPartnerService(options), IB1Client
 {
-    public B1BusinessPartnerAdapter(IOptions<ConfigOptionModel> options) : base(options)
-    {
-    }
-
     public RestResponse AddNew(object entity)
     {
         return AddNewBusinessPartner(entity);

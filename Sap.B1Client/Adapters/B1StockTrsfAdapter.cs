@@ -6,12 +6,8 @@ using Sap.B1Client.System.Models;
 
 namespace Sap.B1Client.Adapters;
 
-public class B1StockTrsfAdapter : B1StockTrsfService, IB1Client
+public class B1StockTrsfAdapter(IOptions<ConfigOptionModel> options) : B1StockTrsfService(options), IB1Client
 {
-    public B1StockTrsfAdapter(IOptions<ConfigOptionModel> options) : base(options)
-    {
-    }
-
     public RestResponse AddNew(object entity)
     {
         return AddNewStockTrsf(entity);

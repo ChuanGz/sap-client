@@ -6,12 +6,8 @@ using Sap.B1Client.System.Models;
 
 namespace Sap.B1Client.Adapters;
 
-public class B1PurchaseOrderAdapter : B1PurchaseOrderService, IB1Client
+public class B1PurchaseOrderAdapter(IOptions<ConfigOptionModel> options) : B1PurchaseOrderService(options), IB1Client
 {
-    public B1PurchaseOrderAdapter(IOptions<ConfigOptionModel> options) : base(options)
-    {
-    }
-
     public RestResponse AddNew(object entity)
     {
         return AddNewDocument(entity);

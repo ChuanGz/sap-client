@@ -6,12 +6,8 @@ using Sap.B1Client.System.Models;
 
 namespace Sap.B1Client.Adapters;
 
-public class B1UnitOfMeasurementAdapter : B1UnitOfMeasurementService, IB1Client
+public class B1UnitOfMeasurementAdapter(IOptions<ConfigOptionModel> options) : B1UnitOfMeasurementService(options), IB1Client
 {
-    public B1UnitOfMeasurementAdapter(IOptions<ConfigOptionModel> options) : base(options)
-    {
-    }
-
     public RestResponse AddNew(object entity)
     {
         return AddNewUnitOfMeasurement(entity);

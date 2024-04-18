@@ -6,12 +6,8 @@ using Sap.B1Client.System.Models;
 
 namespace Sap.B1Client.Adapters;
 
-public class B1StockEntryAdapter : B1StockEntryService, IB1Client
+public class B1StockEntryAdapter(IOptions<ConfigOptionModel> options) : B1StockEntryService(options), IB1Client
 {
-    public B1StockEntryAdapter(IOptions<ConfigOptionModel> options) : base(options)
-    {
-    }
-
     public RestResponse AddNew(object entity)
     {
         return AddNewStockEntry(entity);

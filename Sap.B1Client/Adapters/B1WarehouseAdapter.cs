@@ -6,12 +6,8 @@ using Sap.B1Client.System.Models;
 
 namespace Sap.B1Client.Adapters;
 
-public class B1WarehouseAdapter : B1WarehouseService, IB1Client
+public class B1WarehouseAdapter(IOptions<ConfigOptionModel> options) : B1WarehouseService(options), IB1Client
 {
-    public B1WarehouseAdapter(IOptions<ConfigOptionModel> options) : base(options)
-    {
-    }
-
     public RestResponse AddNew(object entity)
     {
         return AddNewWarehouse(entity);

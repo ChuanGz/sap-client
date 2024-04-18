@@ -6,12 +6,8 @@ using Sap.B1Client.System.Models;
 
 namespace Sap.B1Client.Adapters;
 
-public class B1CreditNoteAdapter : B1CreditNoteService, IB1Client
+public class B1CreditNoteAdapter(IOptions<ConfigOptionModel> options) : B1CreditNoteService(options), IB1Client
 {
-    public B1CreditNoteAdapter(IOptions<ConfigOptionModel> options) : base(options)
-    {
-    }
-
     public RestResponse RetrieveAll(string requiredTemplate)
     {
         return RetrieveAllDocument(requiredTemplate);

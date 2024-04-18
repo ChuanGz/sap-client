@@ -6,12 +6,8 @@ using Sap.B1Client.System.Models;
 
 namespace Sap.B1Client.Adapters;
 
-public class B1ItemAdapter : B1ItemService, IB1Client
+public class B1ItemAdapter(IOptions<ConfigOptionModel> options) : B1ItemService(options), IB1Client
 {
-    public B1ItemAdapter(IOptions<ConfigOptionModel> options) : base(options)
-    {
-    }
-
     public RestResponse AddNew(object entity)
     {
         return AddNewItem(entity);

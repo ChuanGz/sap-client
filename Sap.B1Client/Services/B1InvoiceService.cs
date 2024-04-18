@@ -1,12 +1,8 @@
 ﻿using Microsoft.Extensions.Options;
-using Newtonsoft.Json.Linq;
 using RestSharp;
 using Sap.B1Client.System.Abstracts;
 using Sap.B1Client.System.Constants;
 using Sap.B1Client.System.Models;
-using System;
-using System.Net;
-using System.Threading.Tasks;
 
 namespace Sap.B1Client.Services;
 

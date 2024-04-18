@@ -6,12 +6,8 @@ using Sap.B1Client.System.Models;
 
 namespace Sap.B1Client.Adapters;
 
-public class B1StockExitAdapter : B1StockExitService, IB1Client
+public class B1StockExitAdapter(IOptions<ConfigOptionModel> options) : B1StockExitService(options), IB1Client
 {
-    public B1StockExitAdapter(IOptions<ConfigOptionModel> options) : base(options)
-    {
-    }
-
     public RestResponse AddNew(object entity)
     {
         return AddNewStockExit(entity);
