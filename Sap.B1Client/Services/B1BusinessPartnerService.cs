@@ -46,7 +46,7 @@ public class B1BusinessPartnerService(IOptions<ConfigOptionModel> options) : B1C
     {
         // _request = new RestRequest(string.Format(Constant.B1S_Path_BusinessPartner + Constant.B1S_SID, identity), Method.Patch);
         _request.Resource = string.Format(Constant.B1S_Path_BusinessPartner + Constant.B1S_SID, identity);
-        _request.Method = Method.Post;
+        _request.Method = Method.Patch;
         _request.AddHeader(Constant.B1S_Label_Cookie, _hCookieString);
         _request.AddHeader(Constant.B1S_Label_ReplaceOnPatch, true.ToString());
         _request.AddJsonBody(contentObjt);
